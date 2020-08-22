@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E6FDF86B-F3D1-11D4-8576-0002A516ECE8}") = "ConsoleApp", "ConsoleApp\ConsoleApp.vjsproj", "{AB22D5E7-A9EE-4335-994B-87A29B811BD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB22D5E7-A9EE-4335-994B-87A29B811BD6}.Debug|x86.ActiveCfg = Debug|x86
+		{AB22D5E7-A9EE-4335-994B-87A29B811BD6}.Debug|x86.Build.0 = Debug|x86
+		{AB22D5E7-A9EE-4335-994B-87A29B811BD6}.Release|x86.ActiveCfg = Release|x86
+		{AB22D5E7-A9EE-4335-994B-87A29B811BD6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

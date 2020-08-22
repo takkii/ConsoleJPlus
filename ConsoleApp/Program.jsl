@@ -1,0 +1,67 @@
+﻿package ConsoleApp;
+
+/**
+ * himekuri J++ version.
+ */
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+// Ruco is SubClass.
+class Ruco extends Thread {
+
+    final SimpleDateFormat sdf_koyomi = new SimpleDateFormat("yyyy年MM月dd日HH時mm分ss秒：EEEE");
+    final Calendar cal = Calendar.getInstance();
+
+    public void himekuri() {
+        try {
+            final Ruco thread = new Ruco();
+            thread.setDaemon(true);
+            thread.start();
+
+            System.out.println(sdf_koyomi.format(cal.getTime()));
+
+            thread.join();
+
+        } catch (Exception e) {
+            System.err.println("Exceptionエラーを捕捉しました...");
+            e.printStackTrace(System.out);
+        }
+    }
+}
+
+// Seel is SubClass
+class Seel extends Thread {
+    String version = "1.0.0";
+    String himekuriVersion = "日めくり(J++)の数え番号：" + version;
+
+    public void himekuri() {
+        try {
+            final Seel thread = new Seel();
+            thread.start();
+
+            System.out.println(himekuriVersion);
+
+            thread.join();
+        } catch (Exception ex) {
+            System.err.println("Exceptionエラーを捕捉しました...");
+            ex.printStackTrace(System.out);
+        }
+    }
+}
+
+/**
+ * @author takkii(Takayuki Kamiyama) Program is SuperClass.
+ */
+public class Program {
+    public static void main(final String[] args) {
+
+        // SubClass call
+        final Ruco c = new Ruco();
+        c.himekuri();
+
+        // SubClass call
+        final Seel objc = new Seel();
+        objc.himekuri();
+    }
+}
