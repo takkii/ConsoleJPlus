@@ -29,10 +29,10 @@ class Ruco extends Thread {
 
             System.out.println(sdf_koyomi.format(cal.getTime()));
 
-			System.out.println("来年の1月1日まであと : " + (365 - nichi + 1) + "日です");
+            System.out.println("来年の1月1日まであと : " + (365 - nichi + 1) + "日です");
 
-			cal.setTime(date);
-			System.out.println(reiwa_beta + ":" + reiwa_delta);
+            cal.setTime(date);
+            System.out.println(reiwa_beta + ":" + reiwa_delta);
 
             thread.join();
 
