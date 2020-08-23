@@ -46,7 +46,7 @@ class Ruco extends Thread {
 // Seel is SubClass
 class Seel extends Thread {
     String version = "1.0.0";
-    String himekuriVersion = "日めくり(J++)の数え番号：" + version;
+    String himekuriVersion = "日めくり(J++)の数え番号 ： " + version;
 
     public void himekuri() {
         try {
