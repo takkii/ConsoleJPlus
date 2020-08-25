@@ -70,12 +70,21 @@ class Seel extends Thread {
 public class Program {
     public static void main(final String[] args) {
 
-        // SubClass call
-        final Ruco c = new Ruco();
-        c.himekuri();
+		try
+		{
+			// SubClass call
+			final Ruco c = new Ruco();
+			c.himekuri();
 
-        // SubClass call
-        final Seel objc = new Seel();
-        objc.himekuri();
+			// SubClass call
+			final Seel objc = new Seel();
+			objc.himekuri();
+		}
+		catch (Exception exe)
+		{
+			System.err.println("Exception catch  ...");
+			exe.printStackTrace(System.out);
+		}
+
     }
 }
