@@ -47,8 +47,9 @@ class Ruco extends Thread {
 
 // Seel is SubClass
 class Seel extends Thread {
-    String version = "1.0.0";
-    String himekuriVersion = "日めくり(J++)の数え番号 ： " + version;
+    String RivisionNumber = "1.0.1R1";
+	String himekuriVersion = "日めくり(J++)の数え番号 ： ";
+	String version = himekuriVersion + RivisionNumber;
 
     public void himekuri() {
         try {
@@ -57,7 +58,7 @@ class Seel extends Thread {
             thread.start();
 
 			// System out println call
-            System.out.println(himekuriVersion);
+            System.out.println(version);
 
 			// thread join
             thread.join();
