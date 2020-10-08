@@ -12,7 +12,7 @@ import java.util.Date;
 class Ruco extends Thread {
 
     final Date date = new Date();
-    final SimpleDateFormat sdf_koyomi = new SimpleDateFormat("yyyy年MM月dd日HH時mm分ss秒：EEEE");
+    final SimpleDateFormat sdf_koyomi = new SimpleDateFormat("yyyy年MM月dd日HH時mm分ss秒 : EEEE");
     final static String reiwa_kanji = "令和";
 	// Delete when "0" becomes "10". 
     final static String reiwa_alpha = "R0";
@@ -20,6 +20,10 @@ class Ruco extends Thread {
     final String reiwa_beta = (reiwa_kanji + (cal.get(cal.YEAR)-2018) + "年" + (cal.get(cal.MONTH)+1)+ "月" + cal.get(cal.DAY_OF_MONTH)+"日");
 	final String reiwa_delta = (reiwa_alpha + (cal.get(cal.YEAR) - 2018) + "." + (cal.get(cal.MONTH)+1) + "." + cal.get(cal.DAY_OF_MONTH));
     final int nichi = cal.get(cal.DAY_OF_YEAR);
+	final int ni = (365 - nichi + 1);
+	Integer OneDay = new Integer(ni); 
+	String hi = OneDay.toString();
+	String comma = " : ";
 
     public void himekuri() {
         try {
@@ -31,9 +35,9 @@ class Ruco extends Thread {
 
 			// himekuri function
             System.out.println(sdf_koyomi.format(cal.getTime()));
-            System.out.println("来年の1月1日まであと : " + (365 - nichi + 1) + "日です");
+            System.out.println("来年の1月1日まであと" + comma + hi + "日です");
             cal.setTime(date);
-            System.out.println(reiwa_beta + " : " + reiwa_delta);
+            System.out.println(reiwa_beta + comma + reiwa_delta);
 
 			// thread join
             thread.join();
@@ -47,8 +51,9 @@ class Ruco extends Thread {
 
 // Seel is SubClass
 class Seel extends Thread {
-    String RivisionNumber = "1.0.1R1";
-	String himekuriVersion = "日めくり(J++)の数え番号 ： ";
+	String comma = " : ";
+    String RivisionNumber = "1.0.2";
+	String himekuriVersion = "日めくりの数え番号" + comma;
 	String version = himekuriVersion + RivisionNumber;
 
     public void himekuri() {
